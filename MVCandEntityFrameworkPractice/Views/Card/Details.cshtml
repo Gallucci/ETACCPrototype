@@ -1,0 +1,98 @@
+﻿@model MVCandEntityFrameworkPractice.Models.Domain.Card
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Card</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Catalog.DisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Catalog.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Holder.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Holder.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Iso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

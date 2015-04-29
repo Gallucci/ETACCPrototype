@@ -1,0 +1,75 @@
+﻿@model MVCandEntityFrameworkPractice.Models.Domain.Catalog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Catalog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.DisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.DisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessLevels)
+        </dt>
+        @foreach (var acl in Model.AccessLevels)
+        {
+            <dd>
+                @Html.DisplayFor(modelItem => acl.DisplayName) (@Html.DisplayFor(modelItem => acl.InternalName))
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Cards)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>ISO</th>
+                    <th>Status</th>
+                    <th>Access Starts</th>
+                    <th>Access Ends</th>                    
+                    <th>Holder</th>
+                </tr>        
+                @foreach (var card in Model.Cards)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => card.Iso)
+                        </td>
+                        <td>
+                            <!--Status-->
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => card.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => card.EndDate)
+                        </td>                        
+                        <td>
+                            @Html.DisplayFor(modelItem => card.Holder.FullName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
